@@ -1,0 +1,33 @@
+name: Ubuntu/Debian Workstation Baseline
+os_family: linux
+version: "0.1"
+controls:
+  - check_id: LINUX-FIREWALL-001
+    title: Host firewall enabled
+    category: network
+    severity: high
+  - check_id: LINUX-UPDATES-001
+    title: Package updates current
+    category: patching
+    severity: medium
+  - check_id: LINUX-DISK-001
+    title: Disk encryption indicator detected
+    category: storage
+    severity: medium
+  - check_id: LINUX-SSH-001
+    title: SSH avoids high-risk defaults
+    category: remote_access
+    severity: high
+  - check_id: LINUX-USERS-001
+    title: Privileged local users reviewed
+    category: identity
+    severity: medium
+  - check_id: LINUX-LOGGING-001
+    title: Logging service active
+    category: logging
+    severity: high
+  - check_id: LINUX-SERVICES-001
+    title: Listening services reviewed
+    category: services
+    severity: medium
+

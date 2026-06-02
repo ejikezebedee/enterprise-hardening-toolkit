@@ -1,0 +1,21 @@
+name: Small Business Quick Hardening Baseline
+os_family: mixed
+version: "0.1"
+controls:
+  - check_id: LINUX-FIREWALL-001
+    title: Linux firewall enabled
+    category: network
+    severity: high
+  - check_id: WIN-FIREWALL-001
+    title: Windows firewall enabled
+    category: network
+    severity: high
+  - check_id: LINUX-LOGGING-001
+    title: Linux logging active
+    category: logging
+    severity: high
+  - check_id: WIN-DEFENDER-001
+    title: Windows endpoint protection enabled
+    category: endpoint_protection
+    severity: high
+

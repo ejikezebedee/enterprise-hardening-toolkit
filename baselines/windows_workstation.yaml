@@ -1,0 +1,21 @@
+name: Windows 10/11 Workstation Baseline
+os_family: windows
+version: "0.1"
+controls:
+  - check_id: WIN-FIREWALL-001
+    title: Windows Firewall enabled
+    category: network
+    severity: high
+  - check_id: WIN-DEFENDER-001
+    title: Defender real-time protection enabled
+    category: endpoint_protection
+    severity: high
+  - check_id: WIN-BITLOCKER-001
+    title: BitLocker enabled where required
+    category: storage
+    severity: medium
+  - check_id: WIN-ADMINS-001
+    title: Local administrators reviewed
+    category: identity
+    severity: medium
+

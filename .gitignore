@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv/
+data/
+reports/
+*.sqlite3
+*.zip
+linux_audit.json
+windows_audit.json

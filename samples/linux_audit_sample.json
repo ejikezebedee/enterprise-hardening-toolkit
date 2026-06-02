@@ -1,0 +1,41 @@
+{
+  "scan_id": "linux-sample-001",
+  "client_name": "Sample Client",
+  "hostname": "ubuntu-laptop-01",
+  "os_family": "linux",
+  "os_version": "Ubuntu 24.04",
+  "timestamp": "2026-06-02T13:00:00Z",
+  "collector": {
+    "name": "linux-local-readonly",
+    "requires_root": false,
+    "is_root": false,
+    "mode": "audit-only"
+  },
+  "checks": [
+    {
+      "check_id": "LINUX-FIREWALL-001",
+      "category": "network",
+      "name": "Host firewall is enabled",
+      "status": "FAIL",
+      "current_value": "Status: inactive",
+      "recommended_value": "Host firewall enabled and active",
+      "severity": "high",
+      "evidence": "ufw reports inactive",
+      "remediation": "Enable and configure ufw or firewalld according to business policy.",
+      "compliance_mappings": {"cis": "CIS Linux Firewall Configuration", "nist_800_53": "SC-7", "iso_27001": "A.8.20", "soc2": "CC6"}
+    },
+    {
+      "check_id": "LINUX-LOGGING-001",
+      "category": "logging",
+      "name": "System logging service is active",
+      "status": "PASS",
+      "current_value": "systemd-journald=active",
+      "recommended_value": "At least one approved system logging service active",
+      "severity": "high",
+      "evidence": "systemd-journald active",
+      "remediation": "No action required.",
+      "compliance_mappings": {"cis": "CIS Logging and Auditing", "nist_800_53": "AU-2", "iso_27001": "A.8.15", "soc2": "CC7"}
+    }
+  ]
+}
+

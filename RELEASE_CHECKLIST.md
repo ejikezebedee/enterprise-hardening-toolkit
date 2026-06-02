@@ -1,0 +1,22 @@
+# Release Checklist
+
+- [x] Python syntax checks pass
+- [x] API imports and health endpoint works
+- [x] SQLite database initializes
+- [x] Baseline YAML files load
+- [x] Windows sample JSON imports
+- [x] Sample report generates
+- [x] Tests pass with `python3 -m unittest discover -s tests -v`
+- [x] Secret scan passes
+- [x] Destructive command scan passes
+- [x] No absolute internal server/workspace paths in public documentation
+- [x] User manual reflects the finished product
+- [x] `START_HERE.md` included
+- [x] `LICENSE` included
+- [x] `CONTRIBUTING.md` included
+- [x] `CODE_OF_CONDUCT.md` included
+- [x] `SECURITY.md` included
+- [x] Collector guide included
+- [x] Troubleshooting guide included
+- [x] One-command demo script included
+- [x] Archive excludes runtime database, cache files, and virtual environments
