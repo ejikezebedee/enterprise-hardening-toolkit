@@ -1,5 +1,7 @@
 # Enterprise Hardening Toolkit
 
+![Enterprise Hardening Toolkit product cover](docs/assets/product-cover.png)
+
 Defensive, local-first endpoint hardening audit and reporting toolkit for IT teams, MSPs, consultants, students, and compliance support teams.
 
 The project helps turn endpoint hardening evidence into structured findings, severity scores, remediation guidance, and Markdown reports without collecting credentials or modifying systems automatically.
