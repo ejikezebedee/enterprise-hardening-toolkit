@@ -15,6 +15,13 @@ class SchemaTests(unittest.TestCase):
         errors = validate_audit_payload(payload)
         self.assertTrue(errors)
 
+    def test_invalid_severity_rejected(self):
+        payload = load_audit_json("samples/windows_audit_sample.json")
+        payload["checks"][0]["severity"] = "catastrophic"
+        errors = validate_audit_payload(payload)
+        self.assertTrue(errors)
+        self.assertTrue(any("invalid severity" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

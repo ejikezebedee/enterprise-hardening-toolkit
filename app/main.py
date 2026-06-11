@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 from app.core.config import BASELINES_DIR, DEFAULT_DB_PATH
 from app.db.database import create_client, create_device, init_db, list_rows
-from app.services.audit_importer import import_audit_file
+from app.services.audit_importer import import_audit_file, resolve_allowed_audit_path
 from app.services.baselines import load_all_baselines
 from app.services.reports import generate_markdown_report
 
@@ -72,11 +72,11 @@ def devices_list() -> list[dict]:
 
 @app.post("/audits/import")
 def audits_import(payload: AuditImportRequest) -> dict:
-    path = Path(payload.path)
-    if not path.exists():
-        raise HTTPException(status_code=404, detail=f"Audit JSON not found: {path}")
     try:
+        path = resolve_allowed_audit_path(Path(payload.path))
         return import_audit_file(path)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
@@ -93,4 +93,3 @@ def report_create(audit_id: int) -> dict[str, str]:
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     return {"report_path": str(path)}
-

@@ -29,6 +29,8 @@ Use this toolkit only on systems you own or are explicitly authorized to assess.
 
 This project does not include exploit code, credential collection, stealth, persistence, remote exploitation, auto-hardening, destructive cleanup, or unauthorized scanning.
 
+Audit JSON and generated reports may contain sensitive system configuration evidence and must not be published publicly. Store audit inputs, databases, and reports in approved private locations only.
+
 ## Quick Start
 
 ```bash

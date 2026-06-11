@@ -21,12 +21,23 @@ DESTRUCTIVE_PATTERNS = [
     r"\breboot\b",
     r"Remove-Item\s+-Recurse\s+-Force",
 ]
+IGNORED_PARTS = {
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "data",
+    "htmlcov",
+    "reports",
+}
 
 
 def scan(patterns: list[str]) -> list[str]:
     hits = []
     for path in ROOT.rglob("*"):
-        if path.is_dir() or ".pytest_cache" in path.parts or "__pycache__" in path.parts:
+        if path.is_dir() or IGNORED_PARTS.intersection(path.parts):
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         for pattern in patterns:

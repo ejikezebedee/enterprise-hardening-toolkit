@@ -15,6 +15,8 @@ It helps users:
 
 The toolkit is audit-only by default. It does not exploit systems, collect credentials, bypass authentication, modify systems automatically, run remote scans, delete local files, or export data to cloud services.
 
+Audit JSON and generated reports may contain sensitive system configuration evidence and must not be published publicly. Share them only with authorized stakeholders through approved private channels.
+
 ## 2. What Is Included
 
 - FastAPI backend
